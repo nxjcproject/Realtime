@@ -1,0 +1,14 @@
+E:\NXJCProject\dianbiaobaiyin\RealtimeBY\RealtimeBY.Infrastructure\bin\Release\RealtimeBY.Infrastructure.dll
+E:\NXJCProject\dianbiaobaiyin\RealtimeBY\RealtimeBY.Infrastructure\bin\Release\RealtimeBY.Infrastructure.pdb
+E:\NXJCProject\dianbiaobaiyin\RealtimeBY\RealtimeBY.Infrastructure\obj\Release\RealtimeBY.Infrastructure.dll
+E:\NXJCProject\dianbiaobaiyin\RealtimeBY\RealtimeBY.Infrastructure\obj\Release\RealtimeBY.Infrastructure.pdb
+E:\NXJCProject\dianbiaobaiyin\Realtime\RealtimeBY.Infrastructure\bin\Release\RealtimeBY.Infrastructure.dll
+E:\NXJCProject\dianbiaobaiyin\Realtime\RealtimeBY.Infrastructure\bin\Release\RealtimeBY.Infrastructure.pdb
+E:\NXJCProject\dianbiaobaiyin\Realtime\RealtimeBY.Infrastructure\obj\Release\RealtimeBY.Infrastructure.csprojResolveAssemblyReference.cache
+E:\NXJCProject\dianbiaobaiyin\Realtime\RealtimeBY.Infrastructure\obj\Release\RealtimeBY.Infrastructure.dll
+E:\NXJCProject\dianbiaobaiyin\Realtime\RealtimeBY.Infrastructure\obj\Release\RealtimeBY.Infrastructure.pdb
+C:\工作\编程\恒拓软件\三层框架V3.1\Realtime\RealtimeBY.Infrastructure\bin\Release\RealtimeBY.Infrastructure.dll
+C:\工作\编程\恒拓软件\三层框架V3.1\Realtime\RealtimeBY.Infrastructure\bin\Release\RealtimeBY.Infrastructure.pdb
+C:\工作\编程\恒拓软件\三层框架V3.1\Realtime\RealtimeBY.Infrastructure\obj\Release\RealtimeBY.Infrastructure.csprojResolveAssemblyReference.cache
+C:\工作\编程\恒拓软件\三层框架V3.1\Realtime\RealtimeBY.Infrastructure\obj\Release\RealtimeBY.Infrastructure.dll
+C:\工作\编程\恒拓软件\三层框架V3.1\Realtime\RealtimeBY.Infrastructure\obj\Release\RealtimeBY.Infrastructure.pdb
