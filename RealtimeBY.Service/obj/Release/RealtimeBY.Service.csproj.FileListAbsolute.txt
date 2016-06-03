@@ -25,3 +25,16 @@ C:\工作\编程\恒拓软件\三层框架V3.1\Realtime\RealtimeBY.Service\bin\R
 C:\工作\编程\恒拓软件\三层框架V3.1\Realtime\RealtimeBY.Service\obj\Release\RealtimeBY.Service.csprojResolveAssemblyReference.cache
 C:\工作\编程\恒拓软件\三层框架V3.1\Realtime\RealtimeBY.Service\obj\Release\RealtimeBY.Service.dll
 C:\工作\编程\恒拓软件\三层框架V3.1\Realtime\RealtimeBY.Service\obj\Release\RealtimeBY.Service.pdb
+E:\NXJC\项目文件\Realtime\RealtimeBY.Service\bin\Release\RealtimeBY.Service.dll
+E:\NXJC\项目文件\Realtime\RealtimeBY.Service\bin\Release\RealtimeBY.Service.pdb
+E:\NXJC\项目文件\Realtime\RealtimeBY.Service\bin\Release\EasyUIJsonParser.dll
+E:\NXJC\项目文件\Realtime\RealtimeBY.Service\bin\Release\FileIO.dll
+E:\NXJC\项目文件\Realtime\RealtimeBY.Service\bin\Release\FormTableConvert.dll
+E:\NXJC\项目文件\Realtime\RealtimeBY.Service\bin\Release\RealtimeBY.Infrastructure.dll
+E:\NXJC\项目文件\Realtime\RealtimeBY.Service\bin\Release\SqlServerDataAdapter.dll
+E:\NXJC\项目文件\Realtime\RealtimeBY.Service\bin\Release\UpDownLoadFiles.dll
+E:\NXJC\项目文件\Realtime\RealtimeBY.Service\bin\Release\AutoMapper.dll
+E:\NXJC\项目文件\Realtime\RealtimeBY.Service\bin\Release\RealtimeBY.Infrastructure.pdb
+E:\NXJC\项目文件\Realtime\RealtimeBY.Service\obj\Release\RealtimeBY.Service.csprojResolveAssemblyReference.cache
+E:\NXJC\项目文件\Realtime\RealtimeBY.Service\obj\Release\RealtimeBY.Service.dll
+E:\NXJC\项目文件\Realtime\RealtimeBY.Service\obj\Release\RealtimeBY.Service.pdb

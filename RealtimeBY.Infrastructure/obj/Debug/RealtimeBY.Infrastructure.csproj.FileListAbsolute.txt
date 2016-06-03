@@ -13,3 +13,8 @@ C:\工作\编程\恒拓软件\三层框架V3.1\Realtime\RealtimeBY.Infrastructur
 C:\工作\编程\恒拓软件\三层框架V3.1\Realtime\RealtimeBY.Infrastructure\obj\Debug\RealtimeBY.Infrastructure.dll
 C:\工作\编程\恒拓软件\三层框架V3.1\Realtime\RealtimeBY.Infrastructure\obj\Debug\RealtimeBY.Infrastructure.pdb
 C:\工作\编程\恒拓软件\三层框架V3.1\Realtime\RealtimeBY.Infrastructure\obj\Debug\RealtimeBY.Infrastructure.csprojResolveAssemblyReference.cache
+E:\NXJC\项目文件\Realtime\RealtimeBY.Infrastructure\bin\Debug\RealtimeBY.Infrastructure.dll
+E:\NXJC\项目文件\Realtime\RealtimeBY.Infrastructure\bin\Debug\RealtimeBY.Infrastructure.pdb
+E:\NXJC\项目文件\Realtime\RealtimeBY.Infrastructure\obj\Debug\RealtimeBY.Infrastructure.csprojResolveAssemblyReference.cache
+E:\NXJC\项目文件\Realtime\RealtimeBY.Infrastructure\obj\Debug\RealtimeBY.Infrastructure.dll
+E:\NXJC\项目文件\Realtime\RealtimeBY.Infrastructure\obj\Debug\RealtimeBY.Infrastructure.pdb

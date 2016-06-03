@@ -15,7 +15,6 @@
     <script type="text/javascript" src="/lib/ealib/jquery.easyui.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="/lib/ealib/easyui-lang-zh_CN.js" charset="utf-8"></script>
     <script type="text/javascript" src="/UI_RealtimeAmmeterMonitor/js/page/RealtimeAmmeterMonitor.js" charset="utf-8"></script>
-    <script type="text/javascript" src="/UI_RealtimeAmmeterMonitor/js/page/RealtimeAmmeterMonitor.js" charset="utf-8"></script>
     <script type="text/javascript" src="/UI_RealtimeAmmeterMonitor/js/common/MergeCell.js" charset="utf-8"></script>
 </head>
 <body>

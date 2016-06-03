@@ -1583,6 +1583,8 @@
     <Content Include="lib\pllib\themes\jquery.jqplot.css" />
     <Content Include="lib\pllib\themes\jquery.jqplot.min.css" />
     <Content Include="Test.aspx" />
+    <Content Include="UI_HistoryAmmeterQuery\HistoryAmmeterQuery.aspx" />
+    <Content Include="UI_HistoryAmmeterQuery\js\page\HistoryAmmeterQuery.js" />
     <Content Include="UI_RealtimeAmmeterMonitor\js\common\MergeCell.js" />
     <Content Include="UI_RealtimeAmmeterMonitor\js\page\RealtimeAmmeterMonitor.js" />
     <Content Include="UI_RealtimeAmmeterMonitor\RealtimeAmmeterMonitor.aspx" />
@@ -1601,6 +1603,13 @@
     </Compile>
     <Compile Include="Test.aspx.designer.cs">
       <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI_HistoryAmmeterQuery\HistoryAmmeterQuery.aspx.cs">
+      <DependentUpon>HistoryAmmeterQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI_HistoryAmmeterQuery\HistoryAmmeterQuery.aspx.designer.cs">
+      <DependentUpon>HistoryAmmeterQuery.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI_RealtimeAmmeterMonitor\RealtimeAmmeterMonitor.aspx.cs">
       <DependentUpon>RealtimeAmmeterMonitor.aspx</DependentUpon>
@@ -1638,6 +1647,7 @@
       <Name>RealtimeBY.Service</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

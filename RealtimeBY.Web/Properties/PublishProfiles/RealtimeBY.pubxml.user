@@ -8,7 +8,7 @@
     <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
     <LastUsedPlatform>Any CPU</LastUsedPlatform>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>E:\Release\RealtimeBY</_PublishTargetUrl>
+    <_PublishTargetUrl>E:\NXJC\项目文件\Realtime\Release</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/AutoMapper.dll">
@@ -17,20 +17,29 @@
     <File Include="bin/EasyUIJsonParser.dll">
       <publishTime>05/22/2015 17:34:32</publishTime>
     </File>
+    <File Include="bin/FileIO.dll">
+      <publishTime>10/19/2014 17:33:44</publishTime>
+    </File>
+    <File Include="bin/FormTableConvert.dll">
+      <publishTime>11/07/2014 11:00:10</publishTime>
+    </File>
     <File Include="bin/InternalMemeryRestore.dll">
       <publishTime>03/28/2015 17:45:24</publishTime>
     </File>
     <File Include="bin/RealtimeBY.Infrastructure.dll">
-      <publishTime>04/21/2016 12:04:07</publishTime>
+      <publishTime>05/29/2016 16:50:22</publishTime>
     </File>
     <File Include="bin/RealtimeBY.Service.dll">
-      <publishTime>04/21/2016 16:37:37</publishTime>
+      <publishTime>05/29/2016 16:50:22</publishTime>
     </File>
     <File Include="bin/RealtimeBY.Web.dll">
-      <publishTime>04/21/2016 16:37:39</publishTime>
+      <publishTime>05/29/2016 16:50:23</publishTime>
     </File>
     <File Include="bin/SqlServerDataAdapter.dll">
       <publishTime>03/28/2015 17:45:24</publishTime>
+    </File>
+    <File Include="bin/UpDownLoadFiles.dll">
+      <publishTime>10/13/2015 09:04:20</publishTime>
     </File>
     <File Include="bin/WebStyleBaseForEnergy.dll">
       <publishTime>03/28/2015 17:45:24</publishTime>
@@ -4566,7 +4575,13 @@
       <publishTime>03/28/2015 17:45:24</publishTime>
     </File>
     <File Include="Test.aspx">
-      <publishTime>01/04/2016 08:57:47</publishTime>
+      <publishTime>05/29/2016 16:50:21</publishTime>
+    </File>
+    <File Include="UI_HistoryAmmeterQuery/HistoryAmmeterQuery.aspx">
+      <publishTime>05/29/2016 16:42:28</publishTime>
+    </File>
+    <File Include="UI_HistoryAmmeterQuery/js/page/HistoryAmmeterQuery.js">
+      <publishTime>05/28/2016 18:48:37</publishTime>
     </File>
     <File Include="UI_RealtimeAmmeterMonitor/js/common/MergeCell.js">
       <publishTime>01/03/2016 16:31:27</publishTime>
@@ -4575,7 +4590,7 @@
       <publishTime>01/07/2016 18:47:54</publishTime>
     </File>
     <File Include="UI_RealtimeAmmeterMonitor/RealtimeAmmeterMonitor.aspx">
-      <publishTime>01/03/2016 16:29:45</publishTime>
+      <publishTime>05/27/2016 08:13:53</publishTime>
     </File>
     <File Include="UI_RealtimeBYC_BYF/AmmeterMonitor.aspx">
       <publishTime>06/13/2015 18:43:40</publishTime>
@@ -4587,7 +4602,7 @@
       <publishTime>06/09/2015 10:35:17</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/21/2016 16:41:53</publishTime>
+      <publishTime>05/29/2016 16:50:26</publishTime>
     </File>
   </ItemGroup>
 </Project>
