@@ -14,9 +14,9 @@ $(document).ready(function () {
 //初始化datagrid
 function initDatagrid() {
     $('#AmmeterDatagrid').datagrid({
-        columns: [[
+        frozenColumns: [[
     		{
-    		    field: 'ElectricRoom', title: '电气室', width: 150, styler: function (value, row, index) {
+    		    field: 'ElectricRoom', title: '电气室', width: 120, styler: function (value, row, index) {
     		        if (index < g_num - 1 &&　index != 0) {
     		            return 'background-color:#CCCCCC;border-top:1px solid #1F1F1F;';
     		        }
@@ -26,25 +26,27 @@ function initDatagrid() {
     		    }
     		},
             { field: 'AmmeterName', title: '表名称', width: 150, styler: cellStyler },
-    		{ field: 'AmmeterNumber', title: '电表号', width: 100 },         
-    		{ field: 'CT', title: 'CT', width: 100 },
-            { field: 'PT', title: 'PT', width: 100 },
-            { field: 'Current', title: '平均电流', width: 100 },
-            { field: 'CurrentA', title: 'A项电流', width: 100 },
-            { field: 'CurrentB', title: 'B项电流', width: 100 },
-            { field: 'CurrentC', title: 'C项电流', width: 100 },
-            { field: 'VoltageA', title: 'A项电压', width: 100 },
-            { field: 'VoltageB', title: 'B项电压', width: 100 },
-            { field: 'VoltageC', title: 'C项电压', width: 100 },
-            { field: 'PF', title: '平均功率因数', width: 100 },
-            { field: 'PFA', title: 'A项功率因数', width: 100 },
-            { field: 'PFB', title: 'B项功率因数', width: 100 },
-            { field: 'PFC', title: 'C项功率因数', width: 100 },
-            { field: 'Energy', title: '电能', width: 100 },
-            { field: 'Power', title: '功率', width: 100 },
-            { field: 'Status', title: '状态', width: 100 },
+            ]],
+       columns:[[
+    		{ field: 'AmmeterNumber', title: '电表号', width: 45 },         
+    		{ field: 'CT', title: 'CT', width: 40 },
+            { field: 'PT', title: 'PT', width: 40 },
+            { field: 'Current', title: 'I(平均)', width: 60 },
+            { field: 'CurrentA', title: 'I(A)', width: 60 },
+            { field: 'CurrentB', title: 'I(B)', width: 60 },
+            { field: 'CurrentC', title: 'I(C)', width: 60 },
+            { field: 'VoltageA', title: 'U(A)', width: 65 },
+            { field: 'VoltageB', title: 'U(B)', width: 65 },
+            { field: 'VoltageC', title: 'U(C)', width: 65 },
+            { field: 'PF', title: 'cosΦ(平均)', width: 80 },
+            { field: 'PFA', title: 'cosΦ(A)', width: 60 },
+            { field: 'PFB', title: 'cosΦ(B)', width: 60 },
+            { field: 'PFC', title: 'cosΦ(C)', width: 60 },
+            { field: 'Energy', title: 'W', width: 100 },
+            { field: 'Power', title: 'P', width: 60 },
+            { field: 'Status', title: '状态', width: 90 },
             {
-                field: 'TimeStatusChange', title: '故障开始时间', width: 100, formatter: function (value, row, index) {
+                field: 'TimeStatusChange', title: '故障开始时间', width: 130, formatter: function (value, row, index) {
                     if (row["Status"] == "不能读取") {
                         return value;
                     }
@@ -92,6 +94,10 @@ function queryAmmeter() {
         $.messager.alert("提示", "请选择分厂及分厂以下级别");
         return;
     }
+    var win = $.messager.progress({
+        title: '请稍后',
+        msg: '数据载入中...'
+    });
     $.ajax({
         type: "POST",
         url: "RealtimeAmmeterMonitor.aspx/GetRealtimeAmmeterData",
@@ -100,6 +106,7 @@ function queryAmmeter() {
         dataType: "json",
         async: false,
         success: function (msg) {
+            $.messager.progress('close');
             var myData = jQuery.parseJSON(msg.d);
             g_num = myData.total;
 
@@ -107,7 +114,10 @@ function queryAmmeter() {
             myMergeCell("AmmeterDatagrid", "ElectricRoom");
             myTime();
         },
-        error:myTime
+        error: function () {
+            $.messager.progress('close');
+            myTime
+        }
     });
 }
 

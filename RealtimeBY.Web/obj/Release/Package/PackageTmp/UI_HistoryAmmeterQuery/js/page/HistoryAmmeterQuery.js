@@ -49,10 +49,13 @@ function LoadEDRoomList(OrganizationId) {
 function LoadEDRoomComboboxData(myData) {
     $('#comb_EDRoom').combobox({
         data: myData.rows,
-       // valueField: 'OrganizationID',
+        valueField: 'ElectricRoom',
         textField: 'ElectricRoom',
+        panelHeight:400,
         onSelect: function (param) {
-           var ElectricRoom = param.ElectricRoom;
+            var ElectricRoom = param.ElectricRoom;
+            $('#comb_EDRoom').combobox('setText', ElectricRoom);
+
            $('#comb_Emeter').combobox('setValue', "");
            $('#comb_Emeter').combobox('setText', "");
            LoadEmeterList(ElectricRoom);
@@ -79,6 +82,7 @@ function LoadEmeterComboboxData(myData) {
         data: myData.rows,
         valueField: 'AmmeterNumber',
         textField: 'AmmeterName',
+        panelHeight:400,
         onSelect: function (param) {
             ammeterName = param.AmmeterName;
             ammeterNumber = param.AmmeterNumber;
@@ -88,6 +92,10 @@ function LoadEmeterComboboxData(myData) {
 function QueryHistoryAmmeterData() {
    var startTime=  $('#startDate').datetimebox('getValue');
    var endTime = $('#endDate').datetimebox('getValue');
+   var win = $.messager.progress({
+       title: '请稍后',
+       msg: '数据载入中...'
+   });
     $.ajax({
         type: "POST",
         url: "HistoryAmmeterQuery.aspx/GetAmeterDataJson",
@@ -95,8 +103,12 @@ function QueryHistoryAmmeterData() {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (msg) {
+            $.messager.progress('close');
             var m_MsgData = jQuery.parseJSON(msg.d);
             loadDataGrid("last",m_MsgData);
+        },
+        beforeSend: function (XMLHttpRequest) {
+            win;
         }
     });
 
@@ -104,21 +116,23 @@ function QueryHistoryAmmeterData() {
 function loadDataGrid(type, myData) {
     if (type == "first") {
         $('#table_HistoryAmmeterData').datagrid({
-            columns: [[
-                    { field: 'vDate', title: '时间', width: 120 },
-                    { field: 'AmmeterName', title: '电表名', width: 150 },
-                    { field: 'Energy', title: '电能', width: 75 },
-                    { field: 'Current', title: '电流', width: 75 },
-                    { field: 'CurrentA', title: 'A相电流', width: 75 },
-                    { field: 'CurrentB', title: 'B相电流', width: 75 },
-                    { field: 'CurrentC', title: 'C相电流', width: 75 },
-                    { field: 'PF', title: '功率因数', width: 75 },
-                    { field: 'PFA', title: 'A相功率因数', width: 75 },
-                    { field: 'PFB', title: 'B相功率因数', width: 75 },
-                    { field: 'PFC', title: 'C相功率因数', width: 75 },
-                    { field: 'VoltageA', title: 'A相电压', width: 75 },
-                    { field: 'VoltageB', title: 'B相电压', width: 75 },
-                    { field: 'VoltageC', title: 'C相电压', width: 75 }
+            frozenColumns: [[
+                    { field: 'vDate', title: '时间', width: 130 },
+                    { field: 'AmmeterName', title: '电表名', width: 140 }
+                     ]],
+            columns: [[                  
+                    { field: 'Energy', title: 'W', width: 60 },
+                    { field: 'Current', title: 'I', width: 60 },
+                    { field: 'CurrentA', title: 'I(A)', width: 60 },
+                    { field: 'CurrentB', title: 'I(B)', width: 60 },
+                    { field: 'CurrentC', title: 'I(C)', width: 60 },
+                    { field: 'PF', title: 'cosΦ(平均)', width: 80 },
+                    { field: 'PFA', title: 'cosΦ(A)', width: 60 },
+                    { field: 'PFB', title: 'cosΦ(B)', width: 60 },
+                    { field: 'PFC', title: 'cosΦ(C)', width: 60 },
+                    { field: 'VoltageA', title: 'U(A)', width: 65 },
+                    { field: 'VoltageB', title: 'U(B)', width: 65 },
+                    { field: 'VoltageC', title: 'U(C)', width: 65 }
             ]],
             fit: true,
             //toolbar: "#toolbar_ReportTemplate",

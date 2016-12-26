@@ -17,3 +17,13 @@ E:\NXJC\项目文件\Realtime\RealtimeBY.Infrastructure\bin\Release\RealtimeBY.I
 E:\NXJC\项目文件\Realtime\RealtimeBY.Infrastructure\obj\Release\RealtimeBY.Infrastructure.csprojResolveAssemblyReference.cache
 E:\NXJC\项目文件\Realtime\RealtimeBY.Infrastructure\obj\Release\RealtimeBY.Infrastructure.dll
 E:\NXJC\项目文件\Realtime\RealtimeBY.Infrastructure\obj\Release\RealtimeBY.Infrastructure.pdb
+C:\Users\Administrator\Desktop\第一轮修改\Realtime-master\Realtime-master\RealtimeBY.Infrastructure\bin\Release\RealtimeBY.Infrastructure.dll
+C:\Users\Administrator\Desktop\第一轮修改\Realtime-master\Realtime-master\RealtimeBY.Infrastructure\bin\Release\RealtimeBY.Infrastructure.pdb
+C:\Users\Administrator\Desktop\第一轮修改\Realtime-master\Realtime-master\RealtimeBY.Infrastructure\obj\Release\RealtimeBY.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\第一轮修改\Realtime-master\Realtime-master\RealtimeBY.Infrastructure\obj\Release\RealtimeBY.Infrastructure.dll
+C:\Users\Administrator\Desktop\第一轮修改\Realtime-master\Realtime-master\RealtimeBY.Infrastructure\obj\Release\RealtimeBY.Infrastructure.pdb
+H:\徐一帅项目\第一轮修改\Realtime-master\Realtime-master\RealtimeBY.Infrastructure\bin\Release\RealtimeBY.Infrastructure.dll
+H:\徐一帅项目\第一轮修改\Realtime-master\Realtime-master\RealtimeBY.Infrastructure\bin\Release\RealtimeBY.Infrastructure.pdb
+H:\徐一帅项目\第一轮修改\Realtime-master\Realtime-master\RealtimeBY.Infrastructure\obj\Release\RealtimeBY.Infrastructure.csprojResolveAssemblyReference.cache
+H:\徐一帅项目\第一轮修改\Realtime-master\Realtime-master\RealtimeBY.Infrastructure\obj\Release\RealtimeBY.Infrastructure.dll
+H:\徐一帅项目\第一轮修改\Realtime-master\Realtime-master\RealtimeBY.Infrastructure\obj\Release\RealtimeBY.Infrastructure.pdb

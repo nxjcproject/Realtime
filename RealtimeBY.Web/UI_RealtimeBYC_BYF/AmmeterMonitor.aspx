@@ -20,7 +20,7 @@
 </head>
 <body id="containerId">
     <div id="cc" class="easyui-layout" data-options="fit:'true'">
-        <div data-options="region:'west',split:true" style="width: 230px;">
+        <div data-options="region:'west',split:true" style="width: 215px;">
             <%--<uc1:OrganisationTree ID="OrganisationTree1" runat="server" />--%>
             <ul id="OrganisationTree"></ul>
         </div>

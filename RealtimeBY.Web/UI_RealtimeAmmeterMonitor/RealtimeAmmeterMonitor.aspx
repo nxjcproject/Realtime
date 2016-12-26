@@ -19,7 +19,7 @@
 </head>
 <body>
     <div id="cc" class="easyui-layout" data-options="fit:'true'">
-        <div data-options="region:'west',split:true" style="width: 230px;">
+        <div data-options="region:'west',split:true" style="width: 215px;">
             <div id="OrganisationTree"></div>
         </div>
         <div data-options="region:'center'">      
