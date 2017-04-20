@@ -28,3 +28,8 @@ H:\徐一帅项目\第一轮修改\Realtime-master\Realtime-master\RealtimeBY.In
 H:\徐一帅项目\第一轮修改\Realtime-master\Realtime-master\RealtimeBY.Infrastructure\obj\Debug\RealtimeBY.Infrastructure.csprojResolveAssemblyReference.cache
 H:\徐一帅项目\第一轮修改\Realtime-master\Realtime-master\RealtimeBY.Infrastructure\obj\Debug\RealtimeBY.Infrastructure.dll
 H:\徐一帅项目\第一轮修改\Realtime-master\Realtime-master\RealtimeBY.Infrastructure\obj\Debug\RealtimeBY.Infrastructure.pdb
+H:\2017.3.10后的修改\Realtime-master\RealtimeBY.Infrastructure\bin\Debug\RealtimeBY.Infrastructure.dll
+H:\2017.3.10后的修改\Realtime-master\RealtimeBY.Infrastructure\bin\Debug\RealtimeBY.Infrastructure.pdb
+H:\2017.3.10后的修改\Realtime-master\RealtimeBY.Infrastructure\obj\Debug\RealtimeBY.Infrastructure.csprojResolveAssemblyReference.cache
+H:\2017.3.10后的修改\Realtime-master\RealtimeBY.Infrastructure\obj\Debug\RealtimeBY.Infrastructure.dll
+H:\2017.3.10后的修改\Realtime-master\RealtimeBY.Infrastructure\obj\Debug\RealtimeBY.Infrastructure.pdb

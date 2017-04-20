@@ -121,18 +121,23 @@ function loadDataGrid(type, myData) {
                     { field: 'AmmeterName', title: '电表名', width: 140 }
                      ]],
             columns: [[                  
-                    { field: 'Energy', title: 'W', width: 60 },
-                    { field: 'Current', title: 'I', width: 60 },
+                    
+                    { field: 'AmmeterNumber', title: '电表号', width: 45 },
+                    { field: 'CT', title: 'CT', width: 40 },
+                    { field: 'PT', title: 'PT', width: 40 },
+                    { field: 'Current', title: 'I(平均)', width: 60 },
                     { field: 'CurrentA', title: 'I(A)', width: 60 },
                     { field: 'CurrentB', title: 'I(B)', width: 60 },
                     { field: 'CurrentC', title: 'I(C)', width: 60 },
+                    { field: 'VoltageA', title: 'U(A)', width: 65 },
+                    { field: 'VoltageB', title: 'U(B)', width: 65 },
+                    { field: 'VoltageC', title: 'U(C)', width: 65 },
                     { field: 'PF', title: 'cosΦ(平均)', width: 80 },
                     { field: 'PFA', title: 'cosΦ(A)', width: 60 },
                     { field: 'PFB', title: 'cosΦ(B)', width: 60 },
                     { field: 'PFC', title: 'cosΦ(C)', width: 60 },
-                    { field: 'VoltageA', title: 'U(A)', width: 65 },
-                    { field: 'VoltageB', title: 'U(B)', width: 65 },
-                    { field: 'VoltageC', title: 'U(C)', width: 65 }
+                    { field: 'Energy', title: 'W', width: 100 },
+                    { field: 'Power', title: 'P', width: 60 }
             ]],
             fit: true,
             //toolbar: "#toolbar_ReportTemplate",

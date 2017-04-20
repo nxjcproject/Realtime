@@ -40,11 +40,12 @@ namespace RealtimeBY.Service.HistoryAmmeterQuery
             SqlServerDataFactory _dataFactory = new SqlServerDataFactory(connectionString);
             string meterDbName = GetMeterDatabaseByOrganizationId.GetMeterDatabaseName(organizationId);
             string sql = @" USE [{0}]                       
-                        select  B.vDate,A.AmmeterName,B.{1}Energy as Energy,
-                        C.{1} as [Current],CA.{1} as [CurrentA],CB.{1} as [CurrentB],CC.{1} as [CurrentC],
+                        select  B.vDate,A.AmmeterName,A.AmmeterNumber,A.CT,A.PT, C.{1} as [Current],CA.{1} as [CurrentA],
+                        CB.{1} as [CurrentB],CC.{1} as [CurrentC],
+                        VA.{1} as [VoltageA], VB.{1} as [VoltageB], VC.{1} as [VoltageC],
                         PF.{1} as [PF],PFA.{1} as [PFA],PFB.{1} as [PFB],PFC.{1} as [PFC],
-                        VA.{1} as [VoltageA], VB.{1} as [VoltageB], VC.{1} as [VoltageC]
-                        from [dbo].[AmmeterContrast] A,[dbo].[HistoryAmmeterIncrement] B, 
+                        B.{1}Energy as Energy,B.{1}Power as Power                      
+                        from [dbo].[AmmeterContrast] A,[dbo].[HistoryAmmeter] B, 
                         [dbo].[History_Current] C,[dbo].[History_CurrentA] CA,[dbo].[History_CurrentB] CB,[dbo].[History_CurrentC] CC,
                         [dbo].[History_PF]  PF,[dbo].[History_PF]  PFA,[dbo].[History_PF] PFB,[dbo].[History_PF] PFC,
                         [dbo].[History_VoltageA] VA,[dbo].[History_VoltageB] VB,[dbo].[History_VoltageC] VC
