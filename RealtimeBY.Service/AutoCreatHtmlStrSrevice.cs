@@ -21,16 +21,26 @@ namespace RealtimeBY.Service
                 foreach (DataRow dr in electricRoomTable.Rows)
                 {
                     string t_electricRoomName = dr["ElectricRoom"].ToString().Trim();
+                    string m_newEletricRoomName = dr["ElectricRoomName"].ToString().Trim();//闫潇华修改电气室名称
                     DataTable t_sourceTable = GetTableByElectricRoom(organizationId, t_electricRoomName);
-                    build.Append(PanelHtmlStr(t_sourceTable, t_electricRoomName));
+                    build.Append(PanelHtmlStr(t_sourceTable, t_electricRoomName, m_newEletricRoomName));
                 }
                 return build.ToString();
             }
             else
             {
-                DataTable sourceTable = GetTableByElectricRoom(organizationId, electricRoomName);
+                string m_EletricRoomDbName = GetMeterDatabaseByOrganizationId.GetMeterDatabaseName(organizationId);
+                string connectionString = ConnectionStringFactory.NXJCConnectionString;
+                SqlServerDataFactory _dataFactory = new SqlServerDataFactory(connectionString);
+                string m_Sql = @"SELECT ElectricRoom
+                                FROM [{0}].[dbo].ElectricRoomContrast
+                                WHERE ElectricRoomName='{1}'";
+                DataTable m_EletricRoomTable = _dataFactory.Query(string.Format(m_Sql, m_EletricRoomDbName, electricRoomName));
+                string m_EletricRoom = m_EletricRoomTable.Rows[0]["ElectricRoom"].ToString().Trim();//在此为了用新的电气室名称得到旧的电气室名称，作为查询条件往后传
+
+                DataTable sourceTable = GetTableByElectricRoom(organizationId, m_EletricRoom);
                 //return ToHtmlStrByTable(sourceTable,electricRoomName);
-                return PanelHtmlStr(sourceTable, electricRoomName);
+                return PanelHtmlStr(sourceTable, m_EletricRoom, electricRoomName);
             }
         }
         /// <summary>
@@ -58,10 +68,10 @@ namespace RealtimeBY.Service
         /// <param name="sourceTable"></param>
         /// <param name="electricRoom"></param>
         /// <returns></returns>
-        static private string PanelHtmlStr(DataTable sourceTable, string electricRoom)
+        static private string PanelHtmlStr(DataTable sourceTable, string electricRoom, string electricRoomName)
         {
             StringBuilder stringBuilder = new StringBuilder();
-            string panel = string.Format("<div title=\"{0}\" class=\"easyui-panel\"  style=\"height: auto; padding: 10px;\">",electricRoom);
+            string panel = string.Format("<div title=\"{0}\" class=\"easyui-panel\"  style=\"height: auto; padding: 10px;\">", electricRoomName);
             stringBuilder.Append(panel);
             stringBuilder.Append(ToHtmlStrByTable(sourceTable, electricRoom));
             stringBuilder.Append("</div>");

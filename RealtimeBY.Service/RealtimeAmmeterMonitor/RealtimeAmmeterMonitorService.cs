@@ -15,13 +15,14 @@ namespace RealtimeBY.Service.RealtimeAmmeterMonitor
             string connectionString = ConnectionStringFactory.NXJCConnectionString;
             SqlServerDataFactory _dataFactory = new SqlServerDataFactory(connectionString);
             string meterDbName = GetMeterDatabaseByOrganizationId.GetMeterDatabaseName(organizationId);
-            string sql = @"select AmmeterNumber, AmmeterName,ElectricRoom, CT, PT,Status,TimeStatusChange, AmmeterCode
-                            from [{0}].[dbo].AmmeterContrast A {1} 
-                            order by ElectricRoom,AmmeterNumber";
+            string sql = @"select A.AmmeterNumber, A.AmmeterName,A.ElectricRoom, A.CT, A.PT,A.Status,A.TimeStatusChange, A.AmmeterCode,B.ElectricRoomName,B.DisplayIndex
+                            from [{0}].[dbo].AmmeterContrast A 
+				       left join [{0}].[dbo].ElectricRoomContrast B on A.ElectricRoom=B.ElectricRoom {1}
+                            order by B.DisplayIndex,A.AmmeterNumber";
             DataTable mainTable = new DataTable();
             if ("ElectricRoom" == levelType)
             {
-                mainTable = _dataFactory.Query(string.Format(sql, meterDbName, "where A.EnabledFlag=1 and A.ElectricRoom= '" + electricRoomName + "'"));
+                mainTable = _dataFactory.Query(string.Format(sql, meterDbName, "where A.EnabledFlag=1 and A.ElectricRoom=(select C.ElectricRoom from [" + meterDbName + "].[dbo].ElectricRoomContrast C where C.ElectricRoomName= '" + electricRoomName + "')"));
             }
             else
             {
@@ -31,7 +32,7 @@ namespace RealtimeBY.Service.RealtimeAmmeterMonitor
             string[] array = new string[] { "Current", "CurrentA", "CurrentB", "CurrentC", "PF", "PFA", "PFB", "PFC" ,
                                             "VoltageA","VoltageB","VoltageC"};
             List<DataTable> list = new List<DataTable>();
-            Dictionary<string,DataTable> dictionary=new Dictionary<string,DataTable>();//存储电流电压实时值
+            Dictionary<string, DataTable> dictionary = new Dictionary<string, DataTable>();//存储电流电压实时值
             //增加电流电压等信息
             foreach (string item in array)
             {

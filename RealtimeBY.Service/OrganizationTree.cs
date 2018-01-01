@@ -31,18 +31,19 @@ namespace RealtimeBY.Service
             levelCodeBuild.Remove(levelCodeBuild.Length-4,4);
             DataTable meterDb = dataFactory.Query(string.Format(meterDbSql,levelCodeBuild.ToString()));
             string myStr = @"union
-                                select (A.LevelCode+'01') as LevelCode,A.OrganizationID,REPLACE(B.ElectricRoom, CHAR(13) + CHAR(10), '<br>') ElectricRoom,('ElectricRoom') as LevelType,'open' as state
+                                select (A.LevelCode+'01') as LevelCode,A.OrganizationID,D.DisplayIndex,REPLACE(D.ElectricRoomName, CHAR(13) + CHAR(10), '<br>') ElectricRoom,('ElectricRoom') as LevelType,'open' as state
                                 from system_Organization A
                                 left join
-                                [{0}].[dbo].AmmeterContrast B
-                                on A.OrganizationID=B.OrganizationID
+                                (select B.ElectricRoom,C.ElectricRoomName,B.OrganizationID,C.DisplayIndex 
+								from [{0}].[dbo].AmmeterContrast B
+								   left join [{0}].[dbo].ElectricRoomContrast C on B.ElectricRoom=C.ElectricRoom) D
+                                on A.OrganizationID=D.OrganizationID
                                 where A.LevelType='Factory'
                                 and A.LevelCode like '{1}%'  --数据授权使用
-                                and B.ElectricRoom is not null
-                                and B.ElectricRoom<>''
-                                group by LevelCode,A.OrganizationID,B.ElectricRoom,LevelType
-
-                                ";
+                                and D.ElectricRoom is not null
+                                and D.ElectricRoom<>''
+                                group by LevelCode,A.OrganizationID,D.DisplayIndex,D.ElectricRoomName,LevelType
+                                 ";
             StringBuilder childQuery = new StringBuilder();
             StringBuilder criteria = new StringBuilder();
             foreach (DataRow dr in meterDb.Rows)
@@ -52,14 +53,15 @@ namespace RealtimeBY.Service
                 criteria.Append(" or ");
             }
             criteria.Remove(criteria.Length - 4, 4);
-            string mySql = @"select C.LevelCode,C.OrganizationID,C.Name,C.LevelType,(case when C.LevelType='Factory' then 'closed' else 'open' end) as state
+            string mySql = @"select C.LevelCode,C.OrganizationID,'' as DisplayIndex,C.Name,C.LevelType,(case when C.LevelType='Factory' then 'closed' else 'open' end) as state
                                 from system_Organization C
                                 where (C.LevelType='Company'
                                 or C.LevelType='Factory')
                                 and ({0})
                                 {1}
                                 order by LevelCode";
-            DataTable result=dataFactory.Query(string.Format(mySql,criteria.ToString(),childQuery.ToString()));
+            string aaa = string.Format(mySql, criteria.ToString(), childQuery.ToString());
+            DataTable result = dataFactory.Query(string.Format(mySql, criteria.ToString(), childQuery.ToString()));
             int i = 0;
             //处理levelCode
             foreach (DataRow dr in result.Rows)

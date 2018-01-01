@@ -48,11 +48,11 @@ namespace RealtimeBY.Service
             string managementDatabaseName = GetMeterDatabaseByOrganizationId.GetMeterDatabaseName(organizationId);
             string connectionstring = ConnectionStringFactory.NXJCConnectionString;
             SqlServerDataFactory _dataFactory = new SqlServerDataFactory(connectionstring);
-            string sqlStr= @"SELECT A.ElectricRoom
-                                FROM [{0}].[dbo].AmmeterContrast AS A
-                                WHERE A.EnabledFlag = 1
-                                GROUP BY A.ElectricRoom
-                                ORDER by A.ElectricRoom";
+            string sqlStr = @"SELECT A.ElectricRoom, B.ElectricRoomName
+                                FROM  (SELECT DISTINCT ElectricRoom FROM [{0}].[dbo].[AmmeterContrast] WHERE EnabledFlag=1) A
+                                left join 
+									   [{0}].[dbo].ElectricRoomContrast AS B on A.ElectricRoom = B.ElectricRoom
+                                 ORDER by B.DisplayIndex";
             return _dataFactory.Query(string.Format(sqlStr,managementDatabaseName));
         }
     }

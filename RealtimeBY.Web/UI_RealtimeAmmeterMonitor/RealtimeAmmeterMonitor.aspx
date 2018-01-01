@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>电表监控</title>
+    <title>电表实时监控</title>
     <link rel="stylesheet" type="text/css" href="/lib/ealib/themes/gray/easyui.css" />
     <link rel="stylesheet" type="text/css" href="/lib/ealib/themes/icon.css" />
     <link rel="stylesheet" type="text/css" href="/lib/extlib/themes/syExtIcon.css" />
@@ -25,7 +25,6 @@
         <div data-options="region:'center'">      
             <table id="AmmeterDatagrid"></table>      
         </div>
-        <a id="tooltip" href="javascript:void(0)"></a>
     </div>
 </body>
 </html>

@@ -23,30 +23,30 @@
     <script type="text/javascript" src="js/page/HistoryAmmeterQuery.js" charset="utf-8"></script>
 </head>
 <body>
-    <div class="easyui-layout" data-options="fit:true,border:false" style="padding: 5px;">
+    <div class="easyui-layout" data-options="fit:true,border:false">
         <div data-options="region:'west',border:false " style="width: 150px;">
             <uc1:OrganisationTree ID="OrganisationTree_ProductionLine" runat="server" />
         </div>
          <div data-options="region:'center',border:false">
             <div class="easyui-layout" data-options="fit:true,border:false">
-            <div id="toolbar_EnergyConsumptionPlanInfo" data-options="region:'north'" style="height: 112px">
+            <div id="toolbar_EnergyConsumptionPlanInfo" style="height: 112px">
             <table>
                 <tr>
                     <td>
                         
                         <table>
                             <tr>
-                                <td>组织机构</td>
-                                <td style="width: 80px;">
-                                    <input id="TextBox_OrganizationText" class="easyui-textbox" data-options="editable:false, readonly:true" style="width: 80px;" />
+                                <td style="width:50px; text-align: right;">组织机构</td>
+                                <td>
+                                    <input id="TextBox_OrganizationText" class="easyui-textbox" data-options="editable:false, readonly:true" style="width: 100px;" />
                                 </td>
                                  <td><input id="TextBox_OrganizationId" style="width: 2px; visibility: hidden;" /></td>
-                                  <td>电力室</td>
-                                <td style="width: 140px;">
+                                 <td style="width:40px; text-align: right;">电力室</td>
+                                <td>
                                     <input id="comb_EDRoom" class="easyui-combobox" style="width: 140px;"data-options="panelHeight:'auto'" />
                                 </td>                           
-                                <td>电表</td>
-                                <td style="width: 150px;">
+                                <td style="width:30px; text-align: right;">电表</td>
+                                <td>
                                     <input id="comb_Emeter" class="easyui-combobox" style="width: 150px;"data-options="panelHeight:'auto'" />
                                 </td>  
                             </tr>
@@ -58,15 +58,16 @@
                     <td>
                          <table>
                             <tr>
-                                <td  class="queryDate" style="width:60px">开始时间：</td>
+                                <td  class="queryDate" style="width:50px; text-align: right;">开始时间</td>
                                 <td class="queryDate">
                                     <input id="startDate" type="text" class="easyui-datetimebox" required="required" style="width: 150px;" />
                                 </td>     
-                                <td class="queryDate">                            
-                                    结束时间：<input id="endDate" type="text" class="easyui-datetimebox" required="required" style="width: 150px;" />
+                                <td class="queryDate" style="width:60px; text-align: right;">结束时间</td>
+                                <td class="queryDate">
+                                    <input id="endDate" type="text" class="easyui-datetimebox" required="required" style="width: 150px;" />
                                 </td> 
                                 <td style="width:20px"></td>  
-                                <td class="queryDate"><a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true"
+                                <td class="queryDate"><a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search'"
                                     onclick="QueryHistoryAmmeterData();">查询</a>
                                 </td>  
                                 </tr>
@@ -99,10 +100,5 @@
          </div>
     </div>
     </div>
-   <%-- <form id="formMain" runat="server" target="_blank" method="post">
-        <div>
-            <asp:HiddenField ID="HiddenField_UserName" runat="server" />
-        </div>
-    </form>--%>
 </body>
 </html>

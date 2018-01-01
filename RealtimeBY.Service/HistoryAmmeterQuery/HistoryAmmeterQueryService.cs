@@ -17,8 +17,10 @@ namespace RealtimeBY.Service.HistoryAmmeterQuery
             string connectionString = ConnectionStringFactory.NXJCConnectionString;
             SqlServerDataFactory _dataFactory = new SqlServerDataFactory(connectionString);
             string meterDbName = GetMeterDatabaseByOrganizationId.GetMeterDatabaseName(organizationId);
-            string sql = @"select distinct(ElectricRoom) from [{0}].[dbo].[AmmeterContrast] {1} 
-                            order by ElectricRoom";
+            string sql = @"select A.ElectricRoom AS ElectricRoom, B.ElectricRoomName AS ElectricRoomName
+                             from (SELECT DISTINCT ElectricRoom FROM [{0}].[dbo].[AmmeterContrast] {1}) A
+                        left join [{0}].[dbo].[ElectricRoomContrast] B on A.ElectricRoom=B.ElectricRoom 
+		                          order by B.DisplayIndex";
             DataTable EDRoomListTable = new DataTable();
             EDRoomListTable = _dataFactory.Query(string.Format(sql, meterDbName, "where EnabledFlag=1 "));
             return EDRoomListTable;

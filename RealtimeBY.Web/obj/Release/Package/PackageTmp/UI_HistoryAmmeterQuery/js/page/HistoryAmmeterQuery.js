@@ -20,16 +20,8 @@ function onOrganisationTreeClick(node) {
         $.messager.alert("提示", "请选择分厂级别！");
     } else {
         $('#TextBox_OrganizationText').textbox('setText', node.text);
-
         $('#TextBox_OrganizationId').val(organizationID);
-
-        $('#comb_EDRoom').combobox('setValue', "");
-        $('#comb_EDRoom').combobox('setText', "");
-        $('#comb_Emeter').combobox('setValue', "");
-        $('#comb_Emeter').combobox('setText', "");
-
         LoadEDRoomList(organizationID);
-
     }
 }
 function LoadEDRoomList(OrganizationId) {
@@ -50,14 +42,10 @@ function LoadEDRoomComboboxData(myData) {
     $('#comb_EDRoom').combobox({
         data: myData.rows,
         valueField: 'ElectricRoom',
-        textField: 'ElectricRoom',
+        textField: 'ElectricRoomName',
         panelHeight:400,
         onSelect: function (param) {
             var ElectricRoom = param.ElectricRoom;
-            $('#comb_EDRoom').combobox('setText', ElectricRoom);
-
-           $('#comb_Emeter').combobox('setValue', "");
-           $('#comb_Emeter').combobox('setText', "");
            LoadEmeterList(ElectricRoom);
         }
     });
@@ -75,7 +63,7 @@ function LoadEmeterList(ERoomName) {
         }
     });
 }
-var ammeterName = "";
+
 var ammeterNumber = "";
 function LoadEmeterComboboxData(myData) {
     $('#comb_Emeter').combobox({
@@ -83,8 +71,7 @@ function LoadEmeterComboboxData(myData) {
         valueField: 'AmmeterNumber',
         textField: 'AmmeterName',
         panelHeight:400,
-        onSelect: function (param) {
-            ammeterName = param.AmmeterName;
+        onSelect: function (param) {          
             ammeterNumber = param.AmmeterNumber;
         }
     });
@@ -117,7 +104,7 @@ function loadDataGrid(type, myData) {
     if (type == "first") {
         $('#table_HistoryAmmeterData').datagrid({
             frozenColumns: [[
-                    { field: 'vDate', title: '时间', width: 130 },
+                    { field: 'vDate', title: '时间', width: 125 },
                     { field: 'AmmeterName', title: '电表名', width: 140 }
                      ]],
             columns: [[                  
@@ -125,28 +112,26 @@ function loadDataGrid(type, myData) {
                     { field: 'AmmeterNumber', title: '电表号', width: 45 },
                     { field: 'CT', title: 'CT', width: 40 },
                     { field: 'PT', title: 'PT', width: 40 },
-                    { field: 'Current', title: 'I(平均)', width: 60 },
-                    { field: 'CurrentA', title: 'I(A)', width: 60 },
-                    { field: 'CurrentB', title: 'I(B)', width: 60 },
-                    { field: 'CurrentC', title: 'I(C)', width: 60 },
+                    { field: 'Current', title: 'I(平均)', width: 45 },
+                    { field: 'CurrentA', title: 'I(A)', width: 45 },
+                    { field: 'CurrentB', title: 'I(B)', width: 45 },
+                    { field: 'CurrentC', title: 'I(C)', width: 45 },
                     { field: 'VoltageA', title: 'U(A)', width: 65 },
                     { field: 'VoltageB', title: 'U(B)', width: 65 },
                     { field: 'VoltageC', title: 'U(C)', width: 65 },
-                    { field: 'PF', title: 'cosΦ(平均)', width: 80 },
-                    { field: 'PFA', title: 'cosΦ(A)', width: 60 },
-                    { field: 'PFB', title: 'cosΦ(B)', width: 60 },
-                    { field: 'PFC', title: 'cosΦ(C)', width: 60 },
+                    { field: 'PF', title: 'cosΦ(平均)', width: 70 },
+                    { field: 'PFA', title: 'cosΦ(A)', width: 50 },
+                    { field: 'PFB', title: 'cosΦ(B)', width: 50 },
+                    { field: 'PFC', title: 'cosΦ(C)', width: 50 },
                     { field: 'Energy', title: 'W', width: 100 },
                     { field: 'Power', title: 'P', width: 60 }
             ]],
             fit: true,
-            //toolbar: "#toolbar_ReportTemplate",
+            toolbar: "#toolbar_EnergyConsumptionPlanInfo",
             rownumbers: true,
             singleSelect: true,
             striped: true,
             data: []
-            //,
-            //pagination: true
         });
     }
     else {

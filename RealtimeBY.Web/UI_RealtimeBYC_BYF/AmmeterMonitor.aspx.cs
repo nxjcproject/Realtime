@@ -62,7 +62,7 @@ namespace RealtimeBY.Web.UI_RealtimeBYC_BYF
         [WebMethod]
         public static string CreatHtml(string organizationId,string electricRoomName,string levelType)
         {
-            string htmlStr= AutoCreatHtmlStrSrevice.GetHtml(organizationId, electricRoomName,levelType);
+            string htmlStr = AutoCreatHtmlStrSrevice.GetHtml(organizationId, electricRoomName, levelType);
             return htmlStr;
         }
         [WebMethod]

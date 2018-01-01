@@ -22,7 +22,7 @@ namespace RealtimeBY.Web.UI_HistoryAmmeterQuery
 #if DEBUG
             List<string> m_DataValidIdItems = new List<string>() { "zc_nxjc_byc_byf", "zc_nxjc_qtx", "zc_nxjc_tsc_tsf", "zc_nxjc_ychc" };
             AddDataValidIdGroup("ProductionOrganization", m_DataValidIdItems);
-            mPageOpPermission = "0000";
+            mPageOpPermission = "1111";
 #elif RELEASE
 #endif
             this.OrganisationTree_ProductionLine.Organizations = GetDataValidIdGroup("ProductionOrganization");                 //向web用户控件传递数据授权参数
