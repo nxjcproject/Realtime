@@ -15,8 +15,7 @@ function InitDate() {
 var organizationID = "";
 function onOrganisationTreeClick(node) {
     organizationID = node.OrganizationId;
-    var level = organizationID.split("_").length;
-    if (level <= 3) {
+    if (node.OrganizationType == '分公司') {
         $.messager.alert("提示", "请选择分厂级别！");
     } else {
         $('#TextBox_OrganizationText').textbox('setText', node.text);

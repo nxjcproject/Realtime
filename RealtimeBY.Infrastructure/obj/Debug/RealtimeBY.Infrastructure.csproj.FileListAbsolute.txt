@@ -38,3 +38,8 @@ E:\三层框架\只放最新程序\Realtime-master\Realtime-master\RealtimeBY.In
 E:\三层框架\只放最新程序\Realtime-master\Realtime-master\RealtimeBY.Infrastructure\obj\Debug\RealtimeBY.Infrastructure.csprojResolveAssemblyReference.cache
 E:\三层框架\只放最新程序\Realtime-master\Realtime-master\RealtimeBY.Infrastructure\obj\Debug\RealtimeBY.Infrastructure.dll
 E:\三层框架\只放最新程序\Realtime-master\Realtime-master\RealtimeBY.Infrastructure\obj\Debug\RealtimeBY.Infrastructure.pdb
+C:\Users\Administrator\Desktop\Realtime\RealtimeBY.Infrastructure\bin\Debug\RealtimeBY.Infrastructure.dll
+C:\Users\Administrator\Desktop\Realtime\RealtimeBY.Infrastructure\bin\Debug\RealtimeBY.Infrastructure.pdb
+C:\Users\Administrator\Desktop\Realtime\RealtimeBY.Infrastructure\obj\Debug\RealtimeBY.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Realtime\RealtimeBY.Infrastructure\obj\Debug\RealtimeBY.Infrastructure.dll
+C:\Users\Administrator\Desktop\Realtime\RealtimeBY.Infrastructure\obj\Debug\RealtimeBY.Infrastructure.pdb
